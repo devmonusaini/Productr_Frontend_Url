@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import emptyProduct from "../assets/emptyProduct.png";
 import AddProducts from "./AddProducts";
 import ProductCard from "./ProductCard";
-import UserInfo from "./userInfo";
+import UserInfo from "./UserInfo";
 import { getAllProducts } from "../api/productApi";
 import UpdateProduct from "./UpdateProduct";
 
@@ -128,3 +128,4 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
+
