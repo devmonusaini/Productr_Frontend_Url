@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import emptyProduct from "../assets/emptyProduct.png";
-import UserInfo from "./userInfo";
+import UserInfo from "./UserInfo";
 import ProductCard from "./ProductCard";
 import { getAllProducts } from "../api/productApi";
 
@@ -119,5 +119,6 @@ const HomePage = () => {
     </>
   );
 };
+
 
 export default HomePage;
