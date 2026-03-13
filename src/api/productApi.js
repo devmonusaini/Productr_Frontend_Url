@@ -1,4 +1,4 @@
-const BASE_URL = `${import.meta.env.VITE_BACKEND_URL}/api/products`;
+const BASE_URL = `https://productr-backend-api-1.onrender.com/api/products`;
 
 export const createProduct = async (data) => {
 
@@ -69,4 +69,5 @@ export const toggleProductStatus = async (id) => {
   });
 
   return res.json();
+
 };
