@@ -1,4 +1,4 @@
-const BASE_URL = `https://productr-backend-api-1.onrender.com/api/auth`;
+const BASE_URL = `${import.meta.env.VITE_BACKEND_URL}/api/auth`;
 console.log(import.meta.env.VITE_BACKEND_URL);
 export const registerUser = async (data) => {
 
@@ -75,3 +75,4 @@ export const logoutUser = async () => {
   return res.json();
 
 };
+
