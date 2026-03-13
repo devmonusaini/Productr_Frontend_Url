@@ -10,7 +10,8 @@ const VerifyOtp = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const { refetchUser } = useAuth();
+  const { fetchUser } = useAuth();
+  
 
   const email = location.state?.email;
   const phone = location.state?.phone;
@@ -111,7 +112,7 @@ const VerifyOtp = () => {
 
         toast.success("OTP verified successfully");
 
-        await refetchUser();
+        await fetchUser();
 
         navigate("/dashboard/home");
 
