@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { updateProduct } from "../api/productApi";
 import {toast} from "react-toastify"
 const UpdateProduct= ({ setEditProductOpen, fetchProducts ,editProduct }) => {
-  const BASE_URL = `https://productr-backend-api-1.onrender.com`; 
+  const BASE_URL = `${import.meta.env.VITE_BACKEND_URL}`; 
     const [formData, setFormData] = useState({
       productName: "",
       productType: "",
@@ -318,5 +318,6 @@ const handleSubmit = async (e) => {
 };
 
 export default UpdateProduct;
+
 
 
