@@ -29,7 +29,7 @@ const UserInfo = () => {
     <>
     
       <img
-        src={user?.image ? `${Base_URL}/uploads/${user.image}` : userImage}
+        src={user?.image ? `${BASE_URL}/uploads/${user.image}` : userImage}
         className="w-8 h-8 rounded-full mr-2 object-cover"
         alt="user"
       />
@@ -63,4 +63,5 @@ const UserInfo = () => {
 
 
 export default UserInfo
+
 
