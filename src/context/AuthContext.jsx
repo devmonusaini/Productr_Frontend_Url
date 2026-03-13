@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { getUserProfile } from "../api/authApi";
 
 const AuthContext = createContext();
@@ -6,15 +6,15 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
 
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const fetchUser = async () => {
+    setLoading(true);
 
     try {
-
       const res = await getUserProfile();
 
-      if (res.success) {
+      if (res?.success) {
         setUser(res.user);
       } else {
         setUser(null);
@@ -26,28 +26,27 @@ export const AuthProvider = ({ children }) => {
     } finally {
       setLoading(false);
     }
-
   };
-
-  useEffect(() => {
-    fetchUser();
-  }, []);
 
   const logout = () => {
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, setUser, loading, logout, refetchUser: fetchUser }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        setUser,
+        loading,
+        logout,
+        fetchUser
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
 };
 
 export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error("useAuth must be used within AuthProvider");
-  }
-  return context;
+  return useContext(AuthContext);
 };
