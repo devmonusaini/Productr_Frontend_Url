@@ -8,7 +8,7 @@ import {toast} from "react-toastify"
  
 const UserInfo = () => {
       const [showDropdown, setShowDropdown] = useState(false);
-      const BASE_URL=`https://productr-backend-api-1.onrender.com`
+      const BASE_URL=`${import.meta.env.VITE_BACKEND_URL}`
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -63,3 +63,4 @@ const UserInfo = () => {
 
 
 export default UserInfo
+
